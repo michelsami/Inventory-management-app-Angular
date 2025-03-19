@@ -2,16 +2,62 @@
 
 A modern, responsive inventory management application built with Angular and Angular Material.
 
-## Features
+## Requirements Implementation
 
-- Display and manage inventory items with details (name, category, stock, last updated)
-- Add new items with form validation
-- Edit existing items
-- Delete items
-- Search by item name
-- Filter by stock status (Low Stock < 5, In Stock ≥ 5)
-- Responsive design for all devices
-- Lazy loading for better performance
+### Core Features 
+1. Display inventory items
+   - Implemented list view with columns for name, category, stock, and last updated date
+   - Used Angular Material's MatTable for efficient data display
+   - Added sorting and pagination capabilities
+
+2. Item Management 
+   - View and edit functionality for selected items
+   - Form validation ensures data integrity
+   - Real-time updates using RxJS streams
+
+3. Add New Items 
+   - Comprehensive form with validation
+   - Name field required
+   - Stock quantity must be non-negative
+   - Category selection with predefined options
+
+4. Search and Filter 
+   - Search by item name with debounce
+   - Filter by stock status (Low Stock < 5, In Stock ≥ 5)
+   - Reactive filtering using RxJS operators
+
+5. Backend Simulation 
+   - REST API simulation using services
+   - CRUD operations implemented
+   - Asynchronous data handling with Observables
+
+### Architecture Requirements 
+
+1. Component-Based Design
+   - Followed Angular best practices
+   - Clear separation of concerns
+   - Reusable components
+
+2. Business Logic & State Management
+   - Services handle business logic
+   - BehaviorSubject for state management
+   - Observable streams for data flow
+
+3. Modular Structure
+   - Feature modules (Inventory)
+   - Core module for services
+   - Shared module for common components
+   - Lazy loading implemented
+
+4. Responsive Design
+   - Angular Material components
+   - Mobile-first approach
+   - Flexible layouts
+
+5. Unit Testing
+   - Service tests for CRUD operations
+   - Component tests for validation
+   - Form validation tests
 
 ## Architectural Decisions
 
