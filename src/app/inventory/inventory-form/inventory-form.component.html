@@ -1,0 +1,43 @@
+<form [formGroup]="inventoryForm" (ngSubmit)="onSubmit()" class="inventory-form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ item ? 'Edit' : 'Add' }} Inventory Item</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter item name">
+        <mat-error *ngIf="inventoryForm.get('name')?.errors?.['required']">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Category</mat-label>
+        <input matInput formControlName="category" placeholder="Enter category">
+        <mat-error *ngIf="inventoryForm.get('category')?.errors?.['required']">
+          Category is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Stock Quantity</mat-label>
+        <input matInput type="number" formControlName="stock" placeholder="Enter stock quantity">
+        <mat-error *ngIf="inventoryForm.get('stock')?.errors?.['required']">
+          Stock quantity is required
+        </mat-error>
+        <mat-error *ngIf="inventoryForm.get('stock')?.errors?.['min']">
+          Stock quantity must be non-negative
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-button type="button" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!inventoryForm.valid">
+        {{ item ? 'Update' : 'Add' }} Item
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

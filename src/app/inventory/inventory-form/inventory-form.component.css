@@ -1,0 +1,29 @@
+.inventory-form {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-card {
+  margin-top: 16px;
+}
+
+mat-card-content {
+  padding: 16px;
+}
+
+mat-card-actions {
+  padding: 16px;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .inventory-form {
+    padding: 8px;
+  }
+}
